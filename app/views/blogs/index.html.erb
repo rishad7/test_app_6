@@ -1,0 +1,28 @@
+<h1>Blogs Listing Page</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th colspan="3">Actions</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @blogs.each do |blog| %>
+      <tr>
+        <td><%= blog.title %></td>
+        <td><%= blog.description %></td>
+        <td>
+          <%= link_to 'Show', blog %>
+          <%= link_to 'Edit', edit_blog_path(blog) %>
+          <%= link_to 'Delete', blog_path(blog), method: :delete, data: { confirm: 'Are you sure?' } %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody> 
+</table>
+
+<%= link_to 'Create new blog', new_blog_path %>
+<%= link_to 'Home Page', root_path %>

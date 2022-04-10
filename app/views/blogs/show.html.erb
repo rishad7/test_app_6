@@ -1,0 +1,7 @@
+<h1>Showing blog details</h1>
+<p><strong>Title: </strong><%= @blog.title %></p>
+<p><strong>Description: </strong><%= @blog.description %></p>
+
+<%= link_to 'Edit', edit_blog_path(@blog) %> | 
+<%= link_to 'Delete', blog_path(@blog), method: :delete, data: { confirm: 'Are you sure?' } %> | 
+<%= link_to 'Return to blogs listing', blogs_path %>
